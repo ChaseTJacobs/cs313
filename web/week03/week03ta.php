@@ -5,8 +5,8 @@ Name: <?php echo $_POST["name"]; ?><br>
 Email: <?php echo $_POST["email"]; ?><br>
 Places you have been: <br>
     <?php 
-        if(!empty($POST['checkbox'])) {
-            foreach($POST['checkbox'] as $check) {
+        if(!empty($_POST['checkbox'])) {
+            foreach($_POST['checkbox'] as $check) {
                 echo $check;
             }
         }
