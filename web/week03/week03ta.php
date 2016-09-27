@@ -12,6 +12,7 @@ Places you have been: <br>
             }
         }
     ?><br>
+    Your comments: <br>
     <?php echo $_POST["comments"]; ?>
 
 </body>
