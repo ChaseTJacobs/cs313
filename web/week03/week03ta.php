@@ -7,7 +7,7 @@ Places you have been: <br>
     <?php 
         if(!empty($_POST['checkbox'])) {
             foreach($_POST['checkbox'] as $check) {
-                echo $check; <br>
+                echo $check;
             }
         }
     ?><br>
