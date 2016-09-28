@@ -16,4 +16,4 @@ Places you have been: <br>
     <?php echo $_POST["comments"]; ?>
 
 </body>
-</html
+</html>
