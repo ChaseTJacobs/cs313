@@ -33,34 +33,3 @@ $Yes=0;
 $No=0;
 
 ?>
-
-What year are you in school?
-Freshman
-Sophomore
-Junior
-Senior
-
-What is your major?
-CS
-WDD
-CIT
-SE
-CE
-Other
-
-What is your favorite to program in?
-C++
-Java
-Javascript
-Python
-C
-C#
-SQL
-PHP
-Ruby
-Perl
-Other
-
-Have you ever had a proffesional level programming job/internship?
-Yes
-No
