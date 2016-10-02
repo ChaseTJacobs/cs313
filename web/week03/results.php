@@ -75,18 +75,27 @@
                 Questions
             </th>
             <th>
-                Voting Results
+                Your Answers
+            </th>
+            <th>
+                Pole Results
             </th>
         </tr>
         <tr>
             <td>
                 Q: What year are you in school?
+                
+            </td>
+            <td>
                 <?php 
                     echo $_POST["year"];
                 ?>
             </td>
             <td>
-            
+                Freshman: <?php echo $Freshman; ?> <br>
+                Sophomore: <?php echo $Sophomore; ?> <br>
+                Junior: <?php echo $Junior; ?> <br>
+                Senior: <?php echo $Senior; ?> <br>
             </td>
         </tr>
         <tr>
@@ -98,6 +107,14 @@
                     echo $_POST["major"];
                 ?>
             </td>
+            <td>
+                CS: <?php echo $CS; ?> <br>
+                WDD: <?php echo $WDD; ?> <br>
+                CIT: <?php echo $CIT; ?> <br>
+                SE: <?php echo $SE; ?> <br>
+                CE: <?php echo $CE; ?> <br>
+                Other: <?php echo $Othermajor; ?> <br>
+            </td>
         </tr>
         <tr>
             <td>
@@ -108,6 +125,19 @@
                     echo $_POST["language"];
                 ?>
             </td>
+            <td>
+                C++: <?php echo $Cplusplus; ?> <br>
+                Java: <?php echo $Java; ?> <br>
+                Javascript: <?php echo $Javascript; ?> <br>
+                Python: <?php echo $Python; ?> <br>
+                C: <?php echo $C; ?> <br>
+                C#: <?php echo $Csharp; ?> <br>
+                SQL: <?php echo $SQL; ?> <br>
+                PHP: <?php echo $PHP; ?> <br>
+                Ruby: <?php echo $Ruby; ?> <br>
+                Perl: <?php echo $Perl; ?> <br>
+                Other: <?php echo $Otherlanguage; ?> <br>
+            </td>
         </tr>
         <tr>
             <td>
@@ -117,6 +147,10 @@
                 <?php 
                     echo $_POST["prof"];
                 ?>
+            </td>
+            <td>
+                Yes: <?php echo $Yes; ?> <br>
+                No: <?php echo $No?> <br>
             </td>
         </tr>
     
