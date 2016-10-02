@@ -10,14 +10,14 @@ session_start();
         <form action="results.php" method="post">
         <tr>
             <td>
-                Q: What year are you in school?
+                Q: What year are you in school?<br>
                 <input type="radio" name="year" value="Freshman">Freshman<br>
                 <input type="radio" name="year" value="Sophomore">Sophomore<br>
                 <input type="radio" name="year" value="Junior">Junior<br>
                 <input type="radio" name="year" value="Senior">Senior
             </td>
             <td>
-                Q: What is your major?
+                Q: What is your major?<br>
                 <input type="radio" name="major" value="CS">CS<br>
                 <input type="radio" name="major" value="WDD">WDD<br>
                 <input type="radio" name="major" value="CIT">CIT<br>
@@ -28,7 +28,7 @@ session_start();
         </tr>
         <tr>
             <td>
-                Q: What is your favorite language to program in?
+                Q: What is your favorite language to program in?<br>
                 <input type="radio" name="language" value="Cplus">C++<br>
                 <input type="radio" name="language" value="Java">Java<br>
                 <input type="radio" name="language" value="Javascript">Javascript<br>
@@ -42,7 +42,7 @@ session_start();
                 <input type="radio" name="language" value="Other">Other
             </td>
             <td>
-                Q: Have you ever had a proffesional level programming job/internship?
+                Q: Have you ever had a proffesional level programming job/internship?<br>
                 <input type="radio" name="prof" value="yes">Yes<br>
                 <input type="radio" name="prof" value="no">No
             </td>
@@ -60,7 +60,3 @@ session_start();
 
 </body>
 </html>
-
-
-Yes
-No

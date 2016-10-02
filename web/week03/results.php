@@ -1,3 +1,7 @@
+<?php 
+    
+?>
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -13,6 +17,9 @@
         <tr>
             <td>
                 Q: What year are you in school?
+                <?php 
+                    echo $_POST["year"];
+                ?>
             </td>
             <td>
             
@@ -23,7 +30,9 @@
                 Q: What is your major?
             </td>
             <td>
-            
+                <?php 
+                    echo $_POST["major"];
+                ?>
             </td>
         </tr>
         <tr>
@@ -31,7 +40,9 @@
                 Q: What is your favorite language to program in?
             </td>
             <td>
-            
+                <?php 
+                    echo $_POST["language"];
+                ?>
             </td>
         </tr>
         <tr>
@@ -39,7 +50,9 @@
                 Q: Have you ever had a proffesional level programming job/internship?
             </td>
             <td>
-            
+                <?php 
+                    echo $_POST["prof"];
+                ?>
             </td>
         </tr>
     
