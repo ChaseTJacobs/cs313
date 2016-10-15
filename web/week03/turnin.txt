@@ -1,1 +1,23 @@
-https://powerful-escarpment-35883.herokuapp.com/week03/week03ta.html
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence descpription:
+PHP Survey / This page will prompt the user four questions, and then display them the results of the survey
+
+2. Copy and paste the URL for your web application:
+https://powerful-escarpment-35883.herokuapp.com/week03/week03.php
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/ChaseTJacobs/cs313/tree/master/web/week03
+
+4. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+The application takes the users votes and saves that info.
+
+5. Briefly describe any pieces of the assignment that are not yet working correctly.
+So I wasn’t able to get the filesystem working. The file saves the first time around, but if you were to go on a different computer and submit your results, the only totals you would see for each category is the ‘1’ next to the ones you voted for. In other words, the total results resets every time the page loads and I don’t know why. I thought it was supposed to stay updated.
+
+6. Please select the category you feel best describes your assignment:
+B - Developing, but signficantly deficient
+
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+I wasn’t able to get the save file working, and I didn’t start on Session handling or decorating (CSS).
