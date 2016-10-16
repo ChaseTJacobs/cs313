@@ -18,8 +18,6 @@ if (empty($dbUrl)) {
 
 $dbopts = parse_url($dbUrl);
 
-print "<p>$dbUrl</p>\n\n";
-
 $dbHost = $dbopts["host"]; 
 $dbPort = $dbopts["port"]; 
 $dbUser = $dbopts["user"]; 
@@ -35,15 +33,6 @@ $dbName = ltrim($dbopts["path"],'/');
             </tr>";
 try {
  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    
-foreach($db->query('SELECT * FROM item') as $row){
-        echo '<tr>';
-        echo '<td>' . $row['name'] . '</td>';
-        echo '<td>' . $row['description'] . '</td>';
-        echo '<td>' . $row['quantity'] . '</td>';
-        echo '<td>$' . $row['price'] . '</td>';
-        echo '</tr>';
-    }
 }
 catch (PDOException $ex) {
  print "<p>error: $ex->getMessage() </p>\n\n";
@@ -52,6 +41,47 @@ catch (PDOException $ex) {
     print "</table>"
 
 ?>
+    
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+        <select name="price">
+            <option value="all">All prices</option>
+            <?php
+            $query = $db->$query('SELECT * FROM item')->fetchAll();
+            
+            if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                $price = $_POST['price'];
+                if($price != 'all'){
+                    $query = $db->query("SELECT * FROM item WHERE price='$price'")->fetchAll();
+                }
+            }
+            
+            foreach($db->query('SELECT DISTINCT price FROM item')->fetchAll() as $prices){
+                if($_SERVER["REQUEST_METHOD"] == "POST"){
+                    if($_POST["price"] == $prices["price"]){
+                        $selected = "selected='selected'";
+                    }
+                    else{
+                        $selected = "";
+                    }
+                }
+                echo '<option value="' . $prices['price'] . '"' . $selected . '>' . $prices['price'] . '</option>';
+            }
+            ?>
+            <input type="submit" value="Search" />
+        </select>
+    
+    </form>
+    <?php
+        foreach($query as $row){
+            echo '<tr>';
+            echo '<td>' . $row['name'] . '</td>';
+            echo '<td>' . $row['description'] . '</td>';
+            echo '<td>' . $row['quantity'] . '</td>';
+            echo '<td>$' . $row['price'] . '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    ?>
 
 </body>
 </html>
