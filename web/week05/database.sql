@@ -33,3 +33,39 @@ INSERT INTO item (name, description, quantity, price)
     
     INSERT INTO item (name, description, quantity, price)
     VALUES ('Sofa', 'Leather, Brown', 30, 200);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Sofa', 'Polyester, Black', 24, 450);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Sofa', 'Polyester, Brown', 13, 440);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('TV Stand', 'Wood, Black', 6, 30);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Computer Monitor', '21 Inch, ViewSonic', 14, 150);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Printer Cables', 'USB', 363, 1);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Document Stand', 'Grey, 12in', 74, .75);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Printer', 'HP DeskJet 6122', 7, 20);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Printer', 'HP LaserJet P4015', 18, 20);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Office Chair', 'Black, Leather', 17, 150);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Office Chair', 'Red, Polyester', 28, 89);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Tupperware', 'Fair condition', 182, 1);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('VGA Cables', '3 feet', 7, 2);

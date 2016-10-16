@@ -72,7 +72,7 @@ catch (PDOException $ex) {
                     } else if ($prices == "201"){
                         $low = 201;
                         $high = 300;
-                    } else if ($prices == "201"){
+                    } else if ($prices == "301"){
                         $low = 301;
                         $high = 99999999;
                     }
@@ -100,7 +100,7 @@ catch (PDOException $ex) {
     </form>
     <?php
         foreach($query as $row){
-            if ($row['price'] > $low && $row['price'] < $high){
+            if ($row['price'] >= $low && $row['price'] <= $high){
                 echo '<tr>';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
