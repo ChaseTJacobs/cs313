@@ -56,7 +56,7 @@ catch (PDOException $ex) {
             if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 $prices = $_POST['price'];
                 if($prices != 'all'){
-                    $query = $db->query("SELECT * FROM item WHERE price='$prices'")->fetchAll();
+                    // = $db->query("SELECT * FROM item WHERE price='$prices'")->fetchAll();
                     if ($prices == "11"){
                         $bait = "it is eleven";
                     }
