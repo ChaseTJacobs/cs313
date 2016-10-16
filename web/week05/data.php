@@ -26,7 +26,7 @@ $dbName = ltrim($dbopts["path"],'/');
 try {
  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     
-    foreach($db->query('SELECT name, description, quantity, price') as $row){
+foreach($db->query('SELECT * FROM item') as $row){
         echo '<p>';
         echo $row['name'] . ' ' . $row['description'] . ':';
         echo $row['quantity'] . ' ' . $row['price'];
