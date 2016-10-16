@@ -58,11 +58,11 @@ catch (PDOException $ex) {
                 if($prices != 'all'){
                     $query = $db->query("SELECT * FROM item WHERE price='$prices'")->fetchAll();
                     if ($prices == "11"){
-                        echo 'IT IS ELEVEN';
+                        $bait = "it is eleven";
                     }
                 }
             }
-            
+            /*
             foreach($db->query('SELECT DISTINCT price FROM item')->fetchAll() as $prices){
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if($_POST["price"] == $prices["price"]){
@@ -72,8 +72,8 @@ catch (PDOException $ex) {
                         $selected = "";
                     }
                 }
-                
             }
+            */
             ?>
             <input type="submit" value="Search"/>
         </select>
@@ -82,6 +82,7 @@ catch (PDOException $ex) {
     <?php
         foreach($query as $row){
             //if ($row['price'])
+            echo $bait;
             echo '<tr>';
             echo '<td>' . $row['name'] . '</td>';
             echo '<td>' . $row['description'] . '</td>';
