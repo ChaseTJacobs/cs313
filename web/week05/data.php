@@ -62,7 +62,7 @@ catch (PDOException $ex) {
                     //}
                 }
             }
-            /*
+            
             foreach($db->query('SELECT DISTINCT price FROM item')->fetchAll() as $prices){
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if($_POST["price"] == $prices["price"]){
@@ -73,7 +73,7 @@ catch (PDOException $ex) {
                     }
                 }
                 echo '<option value="' . $prices['price'] . '"' . $selected . '>' . $prices['price'] . '</option>';
-                */
+                
             }
             ?>
             <input type="submit" value="Search"/>
