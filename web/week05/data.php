@@ -6,7 +6,7 @@
 <?php
 
 // default Heroku Postgres configuration URL
-$dbUrl = getenv('DATABASE_URL');
+//$dbUrl = getenv('DATABASE_URL');
 
 if (empty($dbUrl)) {
  // example localhost configuration URL with postgres username and a database called cs313db
