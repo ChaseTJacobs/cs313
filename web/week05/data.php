@@ -57,7 +57,7 @@ catch (PDOException $ex) {
                 $prices = $_POST['price'];
                 if($prices != 'all'){
                     $query = $db->query("SELECT * FROM item WHERE price='$prices'")->fetchAll();
-                    if ($prices == 11){
+                    if ($prices == "11"){
                         echo 'IT IS ELEVEN';
                     }
                 }
