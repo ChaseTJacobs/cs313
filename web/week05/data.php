@@ -1,4 +1,7 @@
 <html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="../css/main.css" />
+    </head>
 <body>
     
     <h1>Items</h1>
@@ -35,7 +38,7 @@ try {
     
 foreach($db->query('SELECT * FROM item') as $row){
         echo '<tr>';
-        echo '<td>' . $row['name'] . '/td>';
+        echo '<td>' . $row['name'] . '</td>';
         echo '<td>' . $row['description'] . '</td>';
         echo '<td>' . $row['quantity'] . '</td>';
         echo '<td>$' . $row['price'] . '</td>';
