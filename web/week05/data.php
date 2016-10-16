@@ -57,8 +57,24 @@ catch (PDOException $ex) {
                 $prices = $_POST['price'];
                 if($prices != 'all'){
                     // = $db->query("SELECT * FROM item WHERE price='$prices'")->fetchAll();
-                    if ($prices == "11"){
-                        $bait = "it is eleven";
+                    if ($prices == "0"){
+                        $low = 0;
+                        $high = 10;
+                    } else if ($prices == "11"){
+                        $low = 11;
+                        $high = 50;
+                    } else if ($prices == "51"){
+                        $low = 51;
+                        $high = 100;
+                    } else if ($prices == "101"){
+                        $low = 101;
+                        $high = 200;
+                    } else if ($prices == "201"){
+                        $low = 201;
+                        $high = 300;
+                    } else if ($prices == "201"){
+                        $low = 301;
+                        $high = 99999999;
                     }
                 }
             }
@@ -81,14 +97,14 @@ catch (PDOException $ex) {
     </form>
     <?php
         foreach($query as $row){
-            //if ($row['price'])
-            echo $bait;
-            echo '<tr>';
-            echo '<td>' . $row['name'] . '</td>';
-            echo '<td>' . $row['description'] . '</td>';
-            echo '<td>' . $row['quantity'] . '</td>';
-            echo '<td>$' . $row['price'] . '</td>';
-            echo '</tr>';
+            if ($row['price'] > $low && $row['price'] < $high){
+                echo '<tr>';
+                echo '<td>' . $row['name'] . '</td>';
+                echo '<td>' . $row['description'] . '</td>';
+                echo '<td>' . $row['quantity'] . '</td>';
+                echo '<td>$' . $row['price'] . '</td>';
+                echo '</tr>';
+            }
         }
         echo '</table>';
     ?>
