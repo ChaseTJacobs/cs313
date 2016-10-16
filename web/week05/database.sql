@@ -69,3 +69,6 @@ INSERT INTO item (name, description, quantity, price)
     
     INSERT INTO item (name, description, quantity, price)
     VALUES ('VGA Cables', '3 feet', 7, 2);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Desk', 'Wood, L-shaped', 3, 250);
