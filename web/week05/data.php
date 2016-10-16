@@ -38,7 +38,6 @@ catch (PDOException $ex) {
  print "<p>error: $ex->getMessage() </p>\n\n";
  die();
 }
-    print "</table>"
 
 ?>
     
@@ -67,7 +66,7 @@ catch (PDOException $ex) {
                 echo '<option value="' . $prices['price'] . '"' . $selected . '>' . $prices['price'] . '</option>';
             }
             ?>
-            <input type="submit" value="Search" />
+            <input type="submit" value="Search"/>
         </select>
     
     </form>
