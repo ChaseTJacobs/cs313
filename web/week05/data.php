@@ -45,12 +45,12 @@ catch (PDOException $ex) {
         <select name="price">
             <option value="all">All prices</option>
             <?php
-            $query = $db->$query('SELECT * FROM item')->fetchAll();
+            $query = $db->query('SELECT * FROM item')->fetchAll();
             
             if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                $price = $_POST['price'];
-                if($price != 'all'){
-                    $query = $db->query("SELECT * FROM item WHERE price='$price'")->fetchAll();
+                $prices = $_POST['price'];
+                if($prices != 'all'){
+                    $query = $db->query("SELECT * FROM item WHERE price='$prices'")->fetchAll();
                 }
             }
             
