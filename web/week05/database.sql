@@ -30,3 +30,6 @@ INSERT INTO item (name, description, quantity, price)
     
     INSERT INTO item (name, description, quantity, price)
     VALUES ('Dining Chairs', 'Wooden, black', 64, 8);
+    
+    INSERT INTO item (name, description, quantity, price)
+    VALUES ('Sofa', 'Leather, Brown', 30, 200);

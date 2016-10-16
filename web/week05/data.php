@@ -23,20 +23,30 @@ $dbUser = $dbopts["user"];
 $dbPassword = $dbopts["pass"];
 $dbName = ltrim($dbopts["path"],'/');
 
+    print "<table>
+            <tr>
+                <th class='tableHeader'>Name</th>
+                <th class='tableHeader'>Description</th>
+                <th class='tableHeader'>Quantity</th>
+                <th class='tableHeader'>Price</th>
+            </tr>";
 try {
  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     
 foreach($db->query('SELECT * FROM item') as $row){
-        echo '<p>';
-        echo $row['name'] . ' ' . $row['description'] . ':';
-        echo $row['quantity'] . ' ' . $row['price'];
-        echo '</p>';
+        echo '<tr>';
+        echo '<td>' . $row['name'] . '/td>';
+        echo '<td>' . $row['description'] . '</td>';
+        echo '<td>' . $row['quantity'] . '</td>';
+        echo '<td>$' . $row['price'] . '</td>';
+        echo '</tr>';
     }
 }
 catch (PDOException $ex) {
  print "<p>error: $ex->getMessage() </p>\n\n";
  die();
 }
+    print "</table>"'
 
 ?>
 
