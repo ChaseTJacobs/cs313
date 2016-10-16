@@ -76,6 +76,9 @@ catch (PDOException $ex) {
                         $low = 301;
                         $high = 99999999;
                     }
+                } else {
+                    $low = 0;
+                    $high = 999999999;
                 }
             }
             /*
