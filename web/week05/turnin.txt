@@ -1,0 +1,22 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence descpription:
+PHP Database Access / Read-only access to database and ability to search through the data.
+
+2. Copy and paste the URL for your web application:
+https://powerful-escarpment-35883.herokuapp.com/week05/data.php
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/ChaseTJacobs/cs313/tree/master/web/week05
+
+4. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+This application has a drop down box that you can use to search the database. Each option in the drop down box is a number range for prices, and when you hit search, the results will only be the items which prices fall within that range.
+
+5. Briefly describe any pieces of the assignment that are not yet working correctly.
+It doesn't look very pretty
+
+6. Please select the category you feel best describes your assignment:
+D - Meets requirements
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+The basic requirements are met, but setting up the PostreSQL Database with Heroku took forever, more than actually figuring out how to access the database with PHP. I am quite proud of my search function though.

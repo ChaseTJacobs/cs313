@@ -1,0 +1,22 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence descpription:
+DB Set up
+
+2. Copy and paste the URL for your web application:
+https://powerful-escarpment-35883.herokuapp.com/week05/data.php
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/ChaseTJacobs/cs313/tree/master/web/week05
+
+4. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+This application is part of assignment 5.6. However this assignment covers the requirements of having a working PostreSQL server, the tables needed for the project, data types for each column, and primary key on each table.
+
+5. Briefly describe any pieces of the assignment that are not yet working correctly.
+N/A
+
+6. Please select the category you feel best describes your assignment:
+E - Shows creativity and excels above and beyond requirements
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+The tables correspond with each other, and one table references to another.
