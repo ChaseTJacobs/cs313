@@ -1,12 +1,12 @@
 <?php
 require('dbconnectionta.php');
-    $book = $chapter = $verse = $content = $topic = $newTopic = "";
+    $name = $description = $quantity = $price = "";
     
     if (isset($_POST) && !empty($_POST)){
         if($_POST['form'] == 'form1') {
                 $db->exec("INSERT INTO item (name, description, quantity, price) VALUES ('$name', '$description', '$quantity', '$price')");
                 $sid = $db->lastInsertId('item_id_seq');
-                $book = $chapter = $verse = $content = $topic = $newTopic = "";
+                $name = $description = $quantity = $price = "";
         }
     }
 ?>
@@ -59,6 +59,7 @@ require('dbconnectionta.php');
                     <td><input type="text" name="price" value="<?= $price;?>"></td>
                 </tr>
             </table>
+            <input type="hidden" name="form" value="form1" />
             <input type="submit" onclick="hide()" value="Submit">
         </form>
     </span>
