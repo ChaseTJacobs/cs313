@@ -31,40 +31,18 @@ require('dbconnectionta.php');
                 });
             });
         </script>
+        <script>    
+            function show(){
+                document.getElementById("results").style.display = "inline";
+            }
+            function hide(){
+                document.getElementById("results").style.display = "none";
+            }
+    </script>
     </head>
-<body>
+<body onload="hide()">
     
     <h1>Items</h1>
-    
-    <script>    
-        function show(){
-            document.getElementById("results").style.display = "inline";
-        }
-        function hide(){
-            document.getElementById("results").style.display = "none";
-        }
-    </script>
-    <input type="button" onclick="show()">Add Element<br>
-    <span id="results">
-        <form action="" method="post" id="addForm">
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="name" value="<?= $name;?>"></td>
-                    <td><input type="text" name="description" value="<?= $description;?>"></td>
-                    <td><input type="text" name="quantity" value="<?= $quantity;?>"></td>
-                    <td><input type="text" name="price" value="<?= $price;?>"></td>
-                </tr>
-            </table>
-            <input type="hidden" name="form" value="form1" />
-            <input type="submit" onclick="hide()" value="Submit">
-        </form>
-    </span>
 
 <?php
 
@@ -171,8 +149,28 @@ catch (PDOException $ex) {
         }
         echo '</table>';
     ?>
-    
-    
+    <br>
+    <input type="button" onclick="show()" value="Add Element">
+    <span id="results">
+        <form action="" method="post" id="addForm">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name" value="<?= $name;?>"></td>
+                    <td><input type="text" name="description" value="<?= $description;?>"></td>
+                    <td><input type="text" name="quantity" value="<?= $quantity;?>"></td>
+                    <td><input type="text" name="price" value="<?= $price;?>"></td>
+                </tr>
+            </table>
+            <input type="hidden" name="form" value="form1" />
+            <input type="submit" onclick="hide()" value="Submit">
+        </form>
+    </span>
 
 </body>
 </html>
