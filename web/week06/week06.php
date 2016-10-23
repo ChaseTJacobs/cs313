@@ -1,3 +1,7 @@
+<?php
+require('db_connectionta.php');
+?>
+
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="../css/main.css" />
@@ -21,20 +25,18 @@
     
     <h1>Items</h1>
     
-    <script>
-        function hide(){
-            document.getElementById("add").style.display = "none";
-        }
-        
+    <script>    
         function show(){
-            document.getElementById("add").style.display = "inline";
+            document.getElementById("results").style.display = "inline";
         }
-    
+        function hide(){
+            document.getElementById("results").style.display = "none";
+        }
     </script>
     <input type="button" onclick="show()">Add Element<br>
     <span id="results">
         <form action="" method="post" id="addForm">
-            <table id="add">
+            <table>
                 <tr>
                     <th>Name</th>
                     <th>Description</th>
@@ -42,10 +44,10 @@
                     <th>Price</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="name" value="<?= $name;?>">"</td>
+                    <td><input type="text" name="name" value="<?= $name;?>"></td>
                     <td><input type="text" name="description" value="<?= $description;?>"></td>
                     <td><input type="text" name="quantity" value="<?= $quantity;?>"></td>
-                    <td><input type="text" name="price" value="<?= $price;?>">"</td>
+                    <td><input type="text" name="price" value="<?= $price;?>"></td>
                 </tr>
             </table>
             <input type="submit" onclick="hide()" value="Submit">
