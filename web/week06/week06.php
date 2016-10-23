@@ -4,7 +4,7 @@ require('dbconnectionta.php');
     
     if (isset($_POST) && !empty($_POST)){
         //if($_POST['form'] == 'form1') {
-                echo "THE STUFF IS: " . $name . $description . $quantity . $price
+                echo "THE STUFF IS: " . $name . $description . $quantity . $price;
                 $db->exec("INSERT INTO item (name, description, quantity, price) VALUES ('$name', '$description', '$quantity', '$price')");
         
                 $sid = $db->lastInsertId('item_id_seq');
