@@ -1,6 +1,4 @@
-<?php
-require('db_connectionta.php');
-?>
+
 
 <html>
     <head>
