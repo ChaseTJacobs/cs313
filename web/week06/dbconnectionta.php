@@ -10,6 +10,7 @@
      $dbName = ltrim($dbopts["path"],'/');
     try {
      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+        $output = "<script>console.log( 'This ran and worked' );</script>";
     }
     catch (PDOException $ex) {
      print "<p>error: $ex->getMessage() </p>\n\n";
