@@ -6,7 +6,6 @@ require('dbconnectionta.php');
         if($_POST['form'] == 'form1') {
                 $db->exec("INSERT INTO item (name, description, quantity, price) VALUES ('$name', '$description', '$quantity', '$price')");
                 $sid = $db->lastInsertId('item_id_seq');
-                $db->exec("INSERT INTO topics (name) VALUES ('$newTopic')");
                 $book = $chapter = $verse = $content = $topic = $newTopic = "";
         }
     }
