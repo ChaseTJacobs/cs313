@@ -1,6 +1,6 @@
 <?php
 require('dbconnectionta.php');
-    $name = $description = $quantity = $price = "";
+    //$name = $description = $quantity = $price = "";
     
     if (isset($_POST) && !empty($_POST)){
         //if($_POST['form'] == 'form1') {
