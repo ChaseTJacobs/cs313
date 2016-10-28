@@ -136,7 +136,6 @@ catch (PDOException $ex) {
             }
             */
             ?>
-            <input type="hidden" name="form" value="form1" />
             <input type="submit" value="Search"/>
         </select>
     
