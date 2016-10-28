@@ -1,8 +1,12 @@
 <?php
 require('dbconnectionta.php');
-    //$name = $description = $quantity = $price = "";
+    $name = $description = $quantity = $price = "";
     
     if (isset($_POST) && !empty($_POST)){
+                $name = $_POST["name"];
+                $description = $_POST["description"];
+                $quantity = $_POST["quantity"];
+                $price = $_POST["price"];
                 echo "THE STUFF IS: " . $name . $description . $quantity . $price;
                 $db->exec("INSERT INTO item (name, description, quantity, price) VALUES ('$name', '$description', '$quantity', '$price')");
         
