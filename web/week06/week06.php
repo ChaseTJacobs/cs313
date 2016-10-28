@@ -17,7 +17,7 @@ require('dbconnectionta.php');
 
 <html>
     <head>
-        <link type="text/css" rel="stylesheet" href="../css/main.css" />
+        <link type="text/css" rel="stylesheet" href="week06.css" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
