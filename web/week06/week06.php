@@ -3,6 +3,7 @@ require('dbconnectionta.php');
     $name = $description = $quantity = $price = "";
     
     if (isset($_POST) && !empty($_POST)){
+        if($_POST['form'] == 'form1'){
                 $name = $_POST["name"];
                 $description = $_POST["description"];
                 $quantity = $_POST["quantity"];
@@ -12,6 +13,7 @@ require('dbconnectionta.php');
         
                 $sid = $db->lastInsertId('item_id_seq');
                 $name = $description = $quantity = $price = "";
+        }
     }
 ?>
 
@@ -134,6 +136,7 @@ catch (PDOException $ex) {
             }
             */
             ?>
+            <input type="hidden" name="form" value="form1" />
             <input type="submit" value="Search"/>
         </select>
     
