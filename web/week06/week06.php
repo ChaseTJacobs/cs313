@@ -42,6 +42,10 @@ require('dbconnectionta.php');
             function hide(){
                 document.getElementById("results").style.display = "none";
             }
+            
+            function toggleCat(num){
+                console.log(num);
+            }
     </script>
     </head>
 <body onload="hide()">
@@ -151,7 +155,7 @@ catch (PDOException $ex) {
     $length = 1;
     foreach($result as $cat){
         echo '<tr>';
-        echo '<td>' . $cat['name'] . '</td>';
+        echo '<td><span onclick="toggleCat('$length')">' . $cat['name'] . '</span></td>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
