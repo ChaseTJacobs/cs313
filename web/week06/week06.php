@@ -64,7 +64,7 @@ require('dbconnectionta.php');
     </head>
 <body onload="hide()">
     
-    <h1>Items</h1>
+    <div class="table-title">Items</div>
 
 <?php
 
@@ -84,12 +84,12 @@ $dbUser = $dbopts["user"];
 $dbPassword = $dbopts["pass"];
 $dbName = ltrim($dbopts["path"],'/');
 
-    print "<table class='table'>
+    print "<table class='table-fill'>
             <tr>
-                <th class='tableHeader'>Name</th>
-                <th class='tableHeader'>Description</th>
-                <th class='tableHeader'>Quantity</th>
-                <th class='tableHeader'>Price</th>
+                <th class='text-left'>Name</th>
+                <th class='text-left'>Description</th>
+                <th class='text-left'>Quantity</th>
+                <th class='text-left'>Price</th>
             </tr>";
 try {
  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
@@ -167,23 +167,25 @@ catch (PDOException $ex) {
     } */
     $result = $db->query('SELECT * FROM category');
     $length = 1;
+    echo '<tbody class="table-hover">'
     foreach($result as $cat){
-        echo '<tr class="catHeading">';
-        echo '<td><span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></td>';
+        echo '<tr>';
+        echo '<td class="text-left"><span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></td>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
                 echo '<tr class="row' . $length . '">';
-                echo '<td>' . $row['name'] . '</td>';
-                echo '<td>' . $row['description'] . '</td>';
-                echo '<td>' . $row['quantity'] . '</td>';
-                echo '<td>$' . $row['price'] . '</td>';
+                echo '<td class="text-left">' . $row['name'] . '</td>';
+                echo '<td class="text-left">' . $row['description'] . '</td>';
+                echo '<td class="text-left">' . $row['quantity'] . '</td>';
+                echo '<td class="text-left">$' . $row['price'] . '</td>';
                 echo '</tr>';
             }
         }
         $length = $length + 1;
     }
+        echo '</tbody>';
         echo '</table>';
     ?>
     <br>
