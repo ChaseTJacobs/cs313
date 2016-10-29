@@ -170,7 +170,7 @@ catch (PDOException $ex) {
     echo '<tbody class="table-hover">'
     foreach($result as $cat){
         echo '<tr>';
-        echo '<td class="text-left"><span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></td>';
+        echo '<td><span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></td>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
