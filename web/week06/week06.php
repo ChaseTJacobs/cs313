@@ -150,11 +150,13 @@ catch (PDOException $ex) {
     $result = $db->query('SELECT * FROM category');
     $length = 0;
     foreach($result as $cat){
-        $length = $length + 1;
-    }
-    echo $length . "is the number of rows";
-    //for()
-        $query = $db->query('SELECT * FROM item ORDER BY category_id')->fetchAll();
+        echo '<tr>';
+        echo '<td>' . $cat['name'] . '</td>';
+        echo '</tr>';
+        $query = $db->query("SELECT * FROM item 
+                             INNER JOIN category
+                             on item.category_id=category.id
+                             WHERE category.id=$length")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high){
                 echo '<tr>';
@@ -165,6 +167,8 @@ catch (PDOException $ex) {
                 echo '</tr>';
             }
         }
+        $length = $length + 1;
+    }
         echo '</table>';
     ?>
     <br>
