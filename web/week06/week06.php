@@ -171,7 +171,7 @@ catch (PDOException $ex) {
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
-                echo '<tr id="row">';
+                echo '<tr id="row' . $length . '">';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
                 echo '<td>' . $row['quantity'] . '</td>';
