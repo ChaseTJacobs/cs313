@@ -4,6 +4,15 @@
     height: 30px;
 }
 
+.table{
+    width:90%;
+    padding: 5%;
+}
+
+.catHeading{
+    
+}
+
 .row1{
     display:inline;
 }
