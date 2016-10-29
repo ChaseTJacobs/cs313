@@ -169,10 +169,9 @@ catch (PDOException $ex) {
         echo '<td><span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></td>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
-        echo '<span id="row' . $length . '">';
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
-                echo '<tr>';
+                echo '<tr id="row' . $length . '">';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
                 echo '<td>' . $row['quantity'] . '</td>';
@@ -180,7 +179,6 @@ catch (PDOException $ex) {
                 echo '</tr>';
             }
         }
-        echo '</span>';
         $length = $length + 1;
     }
         echo '</table>';
