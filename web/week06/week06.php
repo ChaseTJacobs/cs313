@@ -44,7 +44,11 @@ require('dbconnectionta.php');
             }
             
             function toggleCat(num){
-                console.log(num);
+                if (document.getElementById("row" + num).style.display == "none"){
+                    document.getElementById("row" + num).style.display == "inline";
+                } else {
+                    document.getElementById("row" + num).style.display == "none";
+                }
             }
     </script>
     </head>
@@ -160,7 +164,7 @@ catch (PDOException $ex) {
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
-                echo '<tr>';
+                echo '<tr id="row' . $length . '">';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
                 echo '<td>' . $row['quantity'] . '</td>';
