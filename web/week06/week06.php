@@ -93,8 +93,6 @@ catch (PDOException $ex) {
             <option value="201">$201 to $300</option>
             <option value="301">$301 and above</option>
             <?php
-            $query = $db->query('SELECT * FROM item ORDER BY category_id')->fetchAll();
-            
             if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 $prices = $_POST['price'];
                 if($prices != 'all'){
@@ -141,6 +139,18 @@ catch (PDOException $ex) {
     
     </form>
     <?php
+    /*
+    function selectByCategory ($some_id){
+
+        SELECT * FROM item
+            INNER JOIN category
+            ON item.category_id=category.id
+            WHERE category.id = '$some_id';
+    } */
+    $length = $db->query('SELECT COUNT(*) FROM CATEGORY');
+    echo $length;
+    for()
+        $query = $db->query('SELECT * FROM item ORDER BY category_id')->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high){
                 echo '<tr>';
