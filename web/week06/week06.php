@@ -48,7 +48,7 @@ require('dbconnectionta.php');
                 
                 var row = "row" + num.toString();
                 console.log(row);
-                /*
+                
                 if (document.getElementById(row).style.display == "none"){
                     document.getElementById(row).style.display == "inline";
                     console.log("Set to show");
@@ -56,7 +56,7 @@ require('dbconnectionta.php');
                     document.getElementById(row).style.display == "none";
                     console.log("Set to hide");
                 }
-                */
+                
             }
     </script>
     </head>
