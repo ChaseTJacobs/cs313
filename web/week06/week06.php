@@ -46,7 +46,7 @@ require('dbconnectionta.php');
             function toggleCat(num){
                 console.log(num);
                 
-                var row = "row" + Integer.toString(num);
+                var row = "row" + num.toString();
                 console.log(row);
                 /*
                 if (document.getElementById(row).style.display == "none"){
