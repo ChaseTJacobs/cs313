@@ -51,10 +51,10 @@ require('dbconnectionta.php');
                 console.log(row);
                 for (i=0;i<all.length;i++){
                     if (all[i].style.display == "none"){
-                        all[i].style.display == "inline";
+                        all[i].style.display = "inline";
                         console.log("Set to show");
                     } else {
-                        all[i].style.display == "none";
+                        all[i].style.display = "none";
                         console.log("Set to hide");
                     }
                 }
