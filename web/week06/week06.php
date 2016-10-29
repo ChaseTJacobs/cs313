@@ -149,7 +149,7 @@ catch (PDOException $ex) {
     } */
     //$length = $db->query('SELECT COUNT(*) FROM category');
     //echo $length;
-    for()
+    //for()
         $query = $db->query('SELECT * FROM item ORDER BY category_id')->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high){
