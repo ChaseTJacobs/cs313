@@ -169,7 +169,7 @@ catch (PDOException $ex) {
     $length = 1;
     foreach($result as $cat){
         echo '<tr>';
-        echo '<th class="left-text">' . '<span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></th>';
+        echo '<th class="cat">' . '<span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></th>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
