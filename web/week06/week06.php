@@ -147,7 +147,7 @@ catch (PDOException $ex) {
             ON item.category_id=category.id
             WHERE category.id = '$some_id';
     } */
-    $length = $db->query('SELECT COUNT(*) FROM CATEGORY');
+    $length = $db->query('SELECT COUNT(*) FROM category');
     echo $length;
     for()
         $query = $db->query('SELECT * FROM item ORDER BY category_id')->fetchAll();
