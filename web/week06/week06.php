@@ -64,7 +64,7 @@ require('dbconnectionta.php');
     </head>
 <body onload="hide()">
     
-    <div class="table-title">Items</div>
+    <div class="table-title"><h3>Inventory</h3></div>
 
 <?php
 
