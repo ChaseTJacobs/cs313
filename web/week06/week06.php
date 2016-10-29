@@ -44,10 +44,15 @@ require('dbconnectionta.php');
             }
             
             function toggleCat(num){
-                if (document.getElementById("row" + num).style.display == "none"){
-                    document.getElementById("row" + num).style.display == "inline";
+                console.log(num);
+                var row = "row" + Integer.toString(num);
+                console.log(row);
+                if (document.getElementById(row).style.display == "none"){
+                    document.getElementById(row).style.display == "inline";
+                    console.log("Set to show");
                 } else {
-                    document.getElementById("row" + num).style.display == "none";
+                    document.getElementById(row).style.display == "none";
+                    console.log("Set to hide");
                 }
             }
     </script>
