@@ -45,9 +45,10 @@ require('dbconnectionta.php');
             
             function toggleCat(num){
                 console.log(num);
-                /*
+                
                 var row = "row" + Integer.toString(num);
                 console.log(row);
+                /*
                 if (document.getElementById(row).style.display == "none"){
                     document.getElementById(row).style.display == "inline";
                     console.log("Set to show");
