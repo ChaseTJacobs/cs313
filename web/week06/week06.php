@@ -93,7 +93,7 @@ catch (PDOException $ex) {
             <option value="201">$201 to $300</option>
             <option value="301">$301 and above</option>
             <?php
-            $query = $db->query('SELECT * FROM item ORDERBY category_id')->fetchAll();
+            $query = $db->query('SELECT * FROM item')->fetchAll();
             
             if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 $prices = $_POST['price'];
