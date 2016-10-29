@@ -102,6 +102,7 @@ catch (PDOException $ex) {
 ?>
     
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+        <div class="select-style">
         <select name="price">
             <option value="all">All prices</option>
             <option value="0">$0 to $10</option>
@@ -154,6 +155,7 @@ catch (PDOException $ex) {
             ?>
             <input type="submit" value="Search"/>
         </select>
+            </div>
     
     </form>
     <?php
