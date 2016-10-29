@@ -47,14 +47,16 @@ require('dbconnectionta.php');
                 console.log(num);
                 
                 var row = "row" + num.toString();
+                var all = document.getElementsByClassName(row);
                 console.log(row);
-                
-                if (document.getElementById(row).style.display == "none"){
-                    document.getElementById(row).style.display == "inline";
-                    console.log("Set to show");
-                } else {
-                    document.getElementById(row).style.display == "none";
-                    console.log("Set to hide");
+                for (i=0;i<all.length;i++){
+                    if (all[i].style.display == "none"){
+                        all[i].style.display == "inline";
+                        console.log("Set to show");
+                    } else {
+                        all[i].style.display == "none";
+                        console.log("Set to hide");
+                    }
                 }
                 
             }
@@ -172,7 +174,7 @@ catch (PDOException $ex) {
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
-                echo '<tr id="row' . $length . '">';
+                echo '<tr class="row' . $length . '">';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
                 echo '<td>' . $row['quantity'] . '</td>';
