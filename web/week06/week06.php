@@ -167,25 +167,23 @@ catch (PDOException $ex) {
     } */
     $result = $db->query('SELECT * FROM category');
     $length = 1;
-    echo '<tbody class="table-hover">'
     foreach($result as $cat){
-        echo '<tr>';
+        echo '<tr class="catHeading">';
         echo '<td><span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></td>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
                 echo '<tr class="row' . $length . '">';
-                echo '<td class="text-left">' . $row['name'] . '</td>';
-                echo '<td class="text-left">' . $row['description'] . '</td>';
-                echo '<td class="text-left">' . $row['quantity'] . '</td>';
-                echo '<td class="text-left">$' . $row['price'] . '</td>';
+                echo '<td>' . $row['name'] . '</td>';
+                echo '<td>' . $row['description'] . '</td>';
+                echo '<td>' . $row['quantity'] . '</td>';
+                echo '<td>$' . $row['price'] . '</td>';
                 echo '</tr>';
             }
         }
         $length = $length + 1;
     }
-        echo '</tbody>';
         echo '</table>';
     ?>
     <br>
