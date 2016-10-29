@@ -153,7 +153,9 @@ catch (PDOException $ex) {
         echo '<tr>';
         echo '<td>' . $cat['name'] . '</td>';
         echo '</tr>';
-        $query = $db->query("SELECT * FROM item
+        $query = $db->query("SELECT * FROM item 
+                             INNER JOIN category
+                             on item.category_id=category.id
                              WHERE category.id=$length")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high){
