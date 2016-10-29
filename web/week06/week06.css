@@ -143,6 +143,7 @@ td.text-right {
 }
 
 th.cat {
+  column-span: all;
   text-align: center;
   color:#D5DDE5;
   background:grey;
