@@ -45,6 +45,7 @@ require('dbconnectionta.php');
             
             function toggleCat(num){
                 console.log(num);
+                /*
                 var row = "row" + Integer.toString(num);
                 console.log(row);
                 if (document.getElementById(row).style.display == "none"){
@@ -54,6 +55,7 @@ require('dbconnectionta.php');
                     document.getElementById(row).style.display == "none";
                     console.log("Set to hide");
                 }
+                */
             }
     </script>
     </head>
@@ -169,7 +171,7 @@ catch (PDOException $ex) {
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
-                echo '<tr id="row' . $length . '">';
+                echo '<tr id="row">';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
                 echo '<td>' . $row['quantity'] . '</td>';
