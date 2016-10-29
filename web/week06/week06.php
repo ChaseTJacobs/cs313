@@ -148,14 +148,14 @@ catch (PDOException $ex) {
             WHERE category.id = '$some_id';
     } */
     $result = $db->query('SELECT * FROM category');
-    $length = 0;
+    $length = 1;
     foreach($result as $cat){
         echo '<tr>';
         echo '<td>' . $cat['name'] . '</td>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
-            if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length - 1){
+            if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
                 echo '<tr>';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['description'] . '</td>';
