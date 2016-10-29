@@ -8,8 +8,23 @@ require('dbconnectionta.php');
                 $description = $_POST["description"];
                 $quantity = $_POST["quantity"];
                 $price = $_POST["price"];
-                echo "THE STUFF IS: " . $name . $description . $quantity . $price;
-                $db->exec("INSERT INTO item (name, description, quantity, price) VALUES ('$name', '$description', '$quantity', '$price')");
+                $category = $_POST["category"];
+                if ($category == "Furniture"){
+                    $category = 1;
+                } else if (category == "Home Accessories"){
+                    $category = 2;
+                } else if (category == "Kitchen"){
+                    $category = 3;
+                } else if (category == "Computer Accessories"){
+                    $category = 4;
+                } else if (category == "Clothing Male"){
+                    $category = 5;
+                } else if (category == "Clothing Female"){
+                    $category = 6;
+                } else if (category == "Food"){
+                    $category = 7;
+                }
+                $db->exec("INSERT INTO item (name, description, quantity, price, category_id) VALUES ('$name', '$description', '$quantity', '$price', '$category')");
         
                 $sid = $db->lastInsertId('item_id_seq');
                 $name = $description = $quantity = $price = "";
@@ -140,18 +155,6 @@ catch (PDOException $ex) {
                     $high = 999999999;
                 }
             }
-            /*
-            foreach($db->query('SELECT DISTINCT price FROM item')->fetchAll() as $prices){
-                if($_SERVER["REQUEST_METHOD"] == "POST"){
-                    if($_POST["price"] == $prices["price"]){
-                        $selected = "selected='selected'";
-                    }
-                    else{
-                        $selected = "";
-                    }
-                }
-            }
-            */
             ?>
         </select>
             </div>
@@ -203,6 +206,7 @@ catch (PDOException $ex) {
                     <td><input type="text" name="description" value="<?= $description;?>"></td>
                     <td><input type="text" name="quantity" value="<?= $quantity;?>"></td>
                     <td><input type="text" name="price" value="<?= $price;?>"></td>
+                    <td><input type="text" name="category" value="<?= $category;?>"></td>
                 </tr>
             </table>
             <input type="hidden" name="form" value="form1" />
