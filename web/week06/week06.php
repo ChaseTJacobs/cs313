@@ -168,7 +168,7 @@ catch (PDOException $ex) {
     $result = $db->query('SELECT * FROM category');
     $length = 1;
     foreach($result as $cat){
-        echo '<tr>';
+        echo '<tr class="catHeading">';
         echo '<td><span onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</span></td>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
