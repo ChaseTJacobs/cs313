@@ -153,10 +153,9 @@ catch (PDOException $ex) {
             }
             */
             ?>
-            <input type="submit" value="Search"/>
         </select>
             </div>
-    
+    <input type="submit" value="Search"/>
     </form>
     <?php
     /*
