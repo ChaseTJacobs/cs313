@@ -1,0 +1,87 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence descpription:
+Inventory Tracker / A web page meant for a manager/clerk of a thrift/surplus store that helps with keeping inventory.
+
+2. Copy and paste the URL for your web application:
+https://powerful-escarpment-35883.herokuapp.com/week06/week06.php
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/ChaseTJacobs/cs313/tree/master/web/week06
+
+4. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information such as a username/password if necessary.
+This web page has a large table, with table headers outlining each category. When you click on the category headers, the rows of that category expand and collapse. You can also click the Edit button to directly edit and save the information in that row. Down at the bottom there is a general "Add Element" button that will let you add another element completely.
+
+5. Briefly describe any pieces of the assignment that are not yet working correctly.
+Currently there is no way to add a new category.
+
+6. Provide evidence of your database design by showing the tables, describing each one, and then showing the create statements necessary to create each. To do so, run the following commands in MySQL and then copy and paste the results into the essay text box.
+  SHOW TABLES
+  Then for each table:
+  DESCRIBE your-table-name;
+  SHOW CREATE TABLE your-table-name;
+  where “your-table-name” is the name of the table.
+  
+   List of relations
+ Schema |      Name       |   Type   |     Owner      
+--------+-----------------+----------+----------------
+ public | category        | table    | wqxoukiphvzwqs
+ public | category_id_seq | sequence | wqxoukiphvzwqs
+ public | item            | table    | wqxoukiphvzwqs
+ public | item_id_seq     | sequence | wqxoukiphvzwqs
+(4 rows)
+
+Table "public.item"
+   Column    |  Type   |                     Modifiers                     
+-------------+---------+---------------------------------------------------
+ id          | integer | not null default nextval('item_id_seq'::regclass)
+ name        | text    | not null
+ description | text    | not null
+ quantity    | integer | not null
+ price       | integer | not null
+ category_id | integer | not null
+Indexes:
+    "item_pkey" PRIMARY KEY, btree (id)
+    
+    Table "public.category"
+ Column |  Type   |                       Modifiers                       
+--------+---------+-------------------------------------------------------
+ id     | integer | not null default nextval('category_id_seq'::regclass)
+ name   | text    | not null
+Indexes:
+    "category_pkey" PRIMARY KEY, btree (id)
+    
+    SHOW CREATE TABLE didn't work in PostreSQL, and I couldn't find a simple alternative in google that worked.
+
+--------------------------------
+Project Self-assessment
+--------------------------------
+
+For the each of the following criteria, please stat which category you feel best describes your work and give a 1-2 sentence justification for each. The categories are:
+
+A - Some attempt was made
+B - Developing, but signficantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+
+1. Professional look and feel
+D - Table looks snappy. The color scheme might be a bit off but I'm not a designer soooo.
+
+2. Accomplishes a meaningful/interesting task
+E - I actually got this idea after talking to a manager at a thrift shop who expressed frustration because they didn't have software to track their inventory, and everything they looked into was super expensive or didn't fit their needs. I asked him what he wanted, and what I made here is a very rough draft of that.
+
+3. Demonstrates good database design principles
+D - Items and category tables, items reference categories they are contained in.
+
+4. Demonstrates skill in database retrieval
+D - Displays the database on web site. Has a fancy filter option based on price of items.
+
+5. Demonstrates skill in database modification
+C - Slightly deficient, but still mostly adequate, like a Ford Fiesta. Had to use a lot of work arounds it felt like.
+
+6. Demonstrates mastery of client-side/server-side coordination and communication.
+D - Get's the job done.
+
+7. Overall Project
+D - I feel it is a good start to what could be a very useful program.

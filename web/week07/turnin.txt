@@ -1,0 +1,23 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence descpription:
+PHP Database Modification / Part of the project to add stuff to the database.
+
+2. Copy and paste the URL for your web application:
+    https://powerful-escarpment-35883.herokuapp.com/week06/week06.php
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+    https://github.com/ChaseTJacobs/cs313/blob/master/web/week06/week06.php
+
+4. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+    This application has part of the adding functionality to the database.
+
+5. Briefly describe any pieces of the assignment that are not yet working correctly.
+    Still having problems submitting things to the database. I have AJAX working so the page doesn't refresh, but the variables from the input don't save over when the the db->exec function is ran, and the values are all blank. I'm not sure why it is working but I'll have more time to work on this tomorrow.
+
+6. Please select the category you feel best describes your assignment:
+
+B - Developing, but signficantly deficient
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+    Doesn't actually add things to the database yet. It will soon though... probably by the time you've read this, I'll have corrected it.
