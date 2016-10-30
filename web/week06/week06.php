@@ -86,8 +86,8 @@ require('dbconnectionta.php');
                 console.log(rows);
                 var childEl;
                 for (i=0;i<rows.length;i++){
+                    console.log(rows[i].name);
                     if (rows[i].name=="length"){
-                        console.log(rows[i].name);
                         childEl = rows[i].childNodes;
                         console.log(childEl);
                     }
