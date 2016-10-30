@@ -82,6 +82,16 @@ require('dbconnectionta.php');
             function editCell(rowID, length){
                 console.log(rowID);
                 console.log(length);
+                var rows = document.getElementsByClassName(rowID);
+                var childEl;
+                for (i=0;i<rows.length;i++){
+                    if(rows[i].name == length.toString){
+                        childEl = rows[i].childNodes;
+                        for(j=0;j<childEl.length;j++){
+                            childEl[j].firstChild.display="";
+                        }
+                    }
+                }
             }
     </script>
     </head>
