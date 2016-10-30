@@ -90,6 +90,7 @@ require('dbconnectionta.php');
                     if (rows[i].getAttribute("name")==length.toString()){
                         childEl = rows[i].childNodes;
                         console.log(childEl);
+                        childEl.firstElementChild.display="";
                     }
                     
                     //for(j=0;j<childEl.length;j++){
