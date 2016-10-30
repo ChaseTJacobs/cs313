@@ -83,15 +83,13 @@ require('dbconnectionta.php');
                 console.log(length);
                 console.log(rowID);
                 var rows = document.getElementsByClassName("row" + rowID);
-                console.log(rows);
                 var childEl;
                 for (i=0;i<rows.length;i++){
-                    console.log(rows[i].getAttribute("name"));
                     if (rows[i].getAttribute("name")==length.toString()){
                         childEl = rows[i].childNodes;
-                        console.log(childEl);
                         for(j=0;j<childEl.length;j++){
                             childEl[j].firstElementChild.display="";
+                            console.log(childEl[j].firstElementChild);
                         }
                     }
                     
