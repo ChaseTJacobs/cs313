@@ -180,8 +180,8 @@ catch (PDOException $ex) {
     } */
     $result = $db->query('SELECT * FROM category');
     $length = 1;
-    $rowID = 1;
     foreach($result as $cat){
+        $rowID = 1;
         echo '<tr>';
         echo '<th colspan="4" ' . 'class="cat"' . ' onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</th>';
         echo '</tr>';
