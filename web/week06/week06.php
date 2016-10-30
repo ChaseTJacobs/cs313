@@ -218,12 +218,56 @@ catch (PDOException $ex) {
                 $quantity = $row['quantity'];
                 $price = $row['price'];
                 echo '<tr class="row' . $length . '" name="' . $rowID . '">';
-                echo '<td>' . '<input type="text" class="save" value="' . $name . '">' . '<span class="edit">' $name . '</span>' . '</td>';
-                echo '<td>' . '<input type="text" class="save" value="' . $description . '">' . '<span class="edit">' . $description . '</span>' . '</td>';
-                echo '<td>' . '<input type="text" class="save" value="' . $quantity . '">' . '<span class="edit">' . $quantity . '</span>' . '</td>';
-                echo '<td>$' . '<input type="text" class="save" value="' . $price . '">' . '<span class="edit">' . $price . '</span>' . '</td>';
-                echo '<td>' . '<input type="button"' . 'class="edit"' . ' onclick="editCell(' . $rowID . ', ' .  $length . ')"' . ' value="Edit">';
-                echo '<input type="button"' . 'class="save"' . ' onclick="editDatabase(' . $rowID . ', ' .  $length . ')"' . ' value="Save">' . '</td>';
+                echo '<td>' . 
+                    '<input type="text" class="save" value="' . 
+                    $name . 
+                    '">' . 
+                    '<span class="edit">' . 
+                    $name . 
+                    '</span>' . 
+                    '</td>';
+                echo '<td>' . 
+                    '<input type="text" class="save" value="' . 
+                    $description . 
+                    '">' . 
+                    '<span class="edit">' . 
+                    $description . 
+                    '</span>' . 
+                    '</td>';
+                echo '<td>' . 
+                    '<input type="text" class="save" value="' . 
+                    $quantity . 
+                    '">' . 
+                    '<span class="edit">' . 
+                    $quantity . 
+                    '</span>' . 
+                    '</td>';
+                echo '<td>$' . 
+                    '<input type="text" class="save" value="' . 
+                    $price . 
+                    '">' . 
+                    '<span class="edit">' . 
+                    $price . 
+                    '</span>' . 
+                    '</td>';
+                echo '<td>' . 
+                    '<input type="button"' . 
+                    'class="edit"' . 
+                    ' onclick="editCell(' . 
+                    $rowID . 
+                    ', ' .  
+                    $length . 
+                    ')"' . 
+                    ' value="Edit">';
+                echo '<input type="button"' . 
+                    'class="save"' . 
+                    ' onclick="editDatabase(' . 
+                    $rowID . 
+                    ', ' .  
+                    $length . 
+                    ')"' . 
+                    ' value="Save">' . 
+                    '</td>';
                 echo '</tr>';
                 $rowID = $rowID + 1;
             }
