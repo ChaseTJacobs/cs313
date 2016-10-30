@@ -79,8 +79,9 @@ require('dbconnectionta.php');
                 
             }
             
-            function editCell(){
-                var allData = document.getElementsByClassName()
+            function editCell(rowID, length){
+                console.log(rowID);
+                console.log(length);
             }
     </script>
     </head>
@@ -196,7 +197,7 @@ catch (PDOException $ex) {
                 echo '<td>' . '<input type="text" class="save" value="' . $description . '">' . $description . '</td>';
                 echo '<td>' . '<input type="text" class="save" value="' . $quantity . '">' . $quantity . '</td>';
                 echo '<td>$' . '<input type="text" class="save" value="' . $price . '">' . $price . '</td>';
-                echo '<td>' . '<input type="button"' . 'class="edit"' . ' onclick="editCell()"' . ' value="Edit">';
+                echo '<td>' . '<input type="button"' . 'class="edit"' . ' onclick="editCell(' . $rowID . ', ' .  $length . ')"' . ' value="Edit">';
                 echo '<input type="button"' . 'class="save"' . ' onclick="editDatabase()"' . ' value="Save">' . '</td>';
                 echo '</tr>';
                 $rowID = $rowID + 1;
