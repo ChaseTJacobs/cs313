@@ -186,11 +186,15 @@ catch (PDOException $ex) {
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
             if ($row['price'] >= $low && $row['price'] <= $high && $row['category_id'] == $length){
+                $name = $row['name'];
+                $description = $row['description'];
+                $quantity = $row['quantity'];
+                $price = $row['price'];
                 echo '<tr class="row' . $length . '">';
-                echo '<td>' . $row['name'] . '</td>';
-                echo '<td>' . $row['description'] . '</td>';
-                echo '<td>' . $row['quantity'] . '</td>';
-                echo '<td>$' . $row['price'] . '</td>';
+                echo '<td>' . '<input type="text" class="save" value="' . $name . '">' . $name . '</td>';
+                echo '<td>' . '<input type="text" class="save" value="' . $description . '">' . $description . '</td>';
+                echo '<td>' . '<input type="text" class="save" value="' . $quantity . '">' . $quantity . '</td>';
+                echo '<td>$' . '<input type="text" class="save" value="' . $price . '">' . $price . '</td>';
                 echo '<td>' . '<input type="button"' . 'class="edit"' . ' onclick="editCell()"' . ' value="Edit">';
                 echo '<input type="button"' . 'class="save"' . ' onclick="editDatabase()"' . ' value="Save">' . '</td>';
                 echo '</tr>';
