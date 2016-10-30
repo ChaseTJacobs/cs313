@@ -73,6 +73,13 @@ require('dbconnectionta.php');
                         console.log("Set to hide");
                     }
                 }
+            }
+            
+            function editDatabase(id){
+                
+            }
+            
+            function editCell(){
                 
             }
     </script>
@@ -105,6 +112,7 @@ $dbName = ltrim($dbopts["path"],'/');
                 <th class='text-left'>Description</th>
                 <th class='text-left'>Quantity</th>
                 <th class='text-left'>Price</th>
+                <th class='text-left'>Action</th>
             </tr>";
 try {
  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
@@ -183,6 +191,8 @@ catch (PDOException $ex) {
                 echo '<td>' . $row['description'] . '</td>';
                 echo '<td>' . $row['quantity'] . '</td>';
                 echo '<td>$' . $row['price'] . '</td>';
+                echo '<td>' . '<input type="button"' . 'class="edit"' . ' onclick="editCell()"' . ' value="Edit">';
+                echo '<input type="button"' . 'class="save"' . ' onclick="editDatabase()"' . ' value="Save">' . '</td>';
                 echo '</tr>';
             }
         }
@@ -200,6 +210,7 @@ catch (PDOException $ex) {
                     <th>Description</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th>Category</th>
                 </tr>
                 <tr>
                     <td><input type="text" name="name" value="<?= $name;?>"></td>

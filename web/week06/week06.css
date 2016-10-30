@@ -192,3 +192,11 @@ th.cat {
 th.cat:hover{
     background:#a09f9f;
 }
+
+.edit {
+    display:;
+}
+
+.save {
+    display:none;
+}
