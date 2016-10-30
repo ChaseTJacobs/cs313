@@ -80,7 +80,7 @@ require('dbconnectionta.php');
             }
             
             function editCell(){
-                
+                var allData = document.getElementsByClassName()
             }
     </script>
     </head>
@@ -179,6 +179,7 @@ catch (PDOException $ex) {
     } */
     $result = $db->query('SELECT * FROM category');
     $length = 1;
+    $rowID = 1;
     foreach($result as $cat){
         echo '<tr>';
         echo '<th colspan="4" ' . 'class="cat"' . ' onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</th>';
@@ -190,7 +191,7 @@ catch (PDOException $ex) {
                 $description = $row['description'];
                 $quantity = $row['quantity'];
                 $price = $row['price'];
-                echo '<tr class="row' . $length . '">';
+                echo '<tr class="row' . $length . '" name="' . $rowID . '">';
                 echo '<td>' . '<input type="text" class="save" value="' . $name . '">' . $name . '</td>';
                 echo '<td>' . '<input type="text" class="save" value="' . $description . '">' . $description . '</td>';
                 echo '<td>' . '<input type="text" class="save" value="' . $quantity . '">' . $quantity . '</td>';
@@ -198,6 +199,7 @@ catch (PDOException $ex) {
                 echo '<td>' . '<input type="button"' . 'class="edit"' . ' onclick="editCell()"' . ' value="Edit">';
                 echo '<input type="button"' . 'class="save"' . ' onclick="editDatabase()"' . ' value="Save">' . '</td>';
                 echo '</tr>';
+                $rowID = $rowID + 1;
             }
         }
         $length = $length + 1;
