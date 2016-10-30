@@ -75,8 +75,21 @@ require('dbconnectionta.php');
                 }
             }
             
-            function editDatabase(id){
-                
+            function editDatabase(length, rowID){
+                console.log(length);
+                console.log(rowID);
+                var rows = document.getElementsByClassName("row" + rowID);
+                var childEl;
+                for (i=0;i<rows.length;i++){
+                    if (rows[i].getAttribute("name")==length.toString()){
+                        childEl = rows[i].childNodes;
+                        for(j=0;j<childEl.length-1;j++){
+                            childEl[j].firstElementChild.className="save";
+                            console.log(childEl[j].firstElementChild);
+                        }
+                        childEl[length-1].firstElementChild.className="edit";
+                    }
+                }
             }
             
             function editCell(length, rowID){
@@ -91,9 +104,8 @@ require('dbconnectionta.php');
                             childEl[j].firstElementChild.className="edit";
                             console.log(childEl[j].firstElementChild);
                         }
+                        childEl[length-1].firstElementChild.className="save";
                     }
-                    
-                    
                 }
             }
     </script>
@@ -206,12 +218,12 @@ catch (PDOException $ex) {
                 $quantity = $row['quantity'];
                 $price = $row['price'];
                 echo '<tr class="row' . $length . '" name="' . $rowID . '">';
-                echo '<td>' . '<input type="text" class="save" value="' . $name . '">' . $name . '</td>';
-                echo '<td>' . '<input type="text" class="save" value="' . $description . '">' . $description . '</td>';
-                echo '<td>' . '<input type="text" class="save" value="' . $quantity . '">' . $quantity . '</td>';
-                echo '<td>$' . '<input type="text" class="save" value="' . $price . '">' . $price . '</td>';
+                echo '<td>' . '<input type="text" class="save" value="' . $name . '">' . '<span class="edit">' $name . '</span>' . '</td>';
+                echo '<td>' . '<input type="text" class="save" value="' . $description . '">' . '<span class="edit">' $description . '</span>' . '</td>';
+                echo '<td>' . '<input type="text" class="save" value="' . $quantity . '">' . '<span class="edit">' $quantity . '</span>' . '</td>';
+                echo '<td>$' . '<input type="text" class="save" value="' . $price . '">' . '<span class="edit">' $price . '</span>' . '</td>';
                 echo '<td>' . '<input type="button"' . 'class="edit"' . ' onclick="editCell(' . $rowID . ', ' .  $length . ')"' . ' value="Edit">';
-                echo '<input type="button"' . 'class="save"' . ' onclick="editDatabase()"' . ' value="Save">' . '</td>';
+                echo '<input type="button"' . 'class="save"' . ' onclick="editDatabase(' . $rowID . ', ' .  $length . ')"' . ' value="Save">' . '</td>';
                 echo '</tr>';
                 $rowID = $rowID + 1;
             }
