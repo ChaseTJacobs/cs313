@@ -79,10 +79,11 @@ require('dbconnectionta.php');
                 
             }
             
-            function editCell(rowID, length){
-                console.log(rowID);
+            function editCell(length, rowID){
                 console.log(length);
-                var rows = document.getElementsByClassName(rowID);
+                console.log(rowID);
+                var rows = document.getElementsByClassName("row" + rowID);
+                console.log(rows);
                 var childEl;
                 for (i=0;i<rows.length;i++){
                     if(rows[i].name == length.toString){
