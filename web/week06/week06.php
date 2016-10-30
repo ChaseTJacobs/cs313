@@ -87,8 +87,8 @@ require('dbconnectionta.php');
                 for (i=0;i<rows.length;i++){
                     if (rows[i].getAttribute("name")==length.toString()){
                         childEl = rows[i].childNodes;
-                        for(j=0;j<childEl.length;j++){
-                            childEl[j].firstElementChild.display="";
+                        for(j=0;j<childEl.length-1;j++){
+                            childEl[j].firstElementChild.className="edit";
                             console.log(childEl[j].firstElementChild);
                         }
                     }
