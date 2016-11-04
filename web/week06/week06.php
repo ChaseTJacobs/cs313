@@ -28,6 +28,8 @@ require('dbconnectionta.php');
         
                 $sid = $db->lastInsertId('item_id_seq');
                 $name = $description = $quantity = $price = "";
+        } else if ($_POST['form'] == 'form2'){
+            
         }
     }
 ?>
@@ -218,6 +220,7 @@ catch (PDOException $ex) {
             </div>
     <input class="submit" type="submit" value="Search"/>
     </form>
+    <form action="" methond="post" id="addForm2">
     <?php
     /*
     function selectByCategory ($some_id){
@@ -275,7 +278,7 @@ catch (PDOException $ex) {
                     '</span>' . 
                     '</td>';
                 echo '<td>' . 
-                    '<input type="button"' . 
+                    '<input type="submit"' . 
                     'class="edit"' . 
                     ' onclick="editCell(' . 
                     $rowID . 
@@ -283,7 +286,7 @@ catch (PDOException $ex) {
                     $length . 
                     ')"' . 
                     ' value="Edit">';
-                echo '<input type="button"' . 
+                echo '<input type="submit"' . 
                     'class="save"' . 
                     ' onclick="editDatabase(' . 
                     $rowID . 
@@ -298,6 +301,10 @@ catch (PDOException $ex) {
         }
         $length = $length + 1;
     }
+        ?>
+        <input type="hidden" name="form2" value="form2" />
+        </form>
+    <?php
         echo '</table>';
     ?>
     <br>
