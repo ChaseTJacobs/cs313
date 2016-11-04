@@ -30,8 +30,11 @@ require('dbconnectionta.php');
         
                 $sid = $db->lastInsertId('item_id_seq');
                 $name = $description = $quantity = $price = "";
-        } else if ($_POST['form'] == ''){
-            
+        } else {
+            if ( is_array( $_POST ) ){
+                $output = implode( ',', $_POST);
+                debug_to_console($output);
+            }
         }
     }
 
