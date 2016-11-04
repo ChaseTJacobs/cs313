@@ -33,11 +33,16 @@ require('dbconnectionta.php');
         } else {
             if ( is_array( $_POST ) ){
                 $output1 = $_POST;
-                debug_to_console(count($output1));
-                $name = $description = $quantity = $price = "t";
-                foreach ($output1 as $result){
-                    debug_to_console($result);
+                if (count($output1) == 5){
+                    $name = $output1[0];
+                    $description = $output1[1];
+                    $quantity = $output1[2];
+                    $price = $output1[3];
                 }
+                debug_to_console( $name );
+                debug_to_console( $description );
+                debug_to_console( $quantity );
+                debug_to_console( $price );
             }
         }
     }
