@@ -3,6 +3,8 @@ require('dbconnectionta.php');
     $name = $description = $quantity = $price = "";
     
     if (isset($_POST) && !empty($_POST)){
+        $set = $_POST;
+        debug_to_console($_POST);
         if($_POST['form'] == 'form1'){
                 $name = $_POST["name"];
                 $description = $_POST["description"];
@@ -28,10 +30,20 @@ require('dbconnectionta.php');
         
                 $sid = $db->lastInsertId('item_id_seq');
                 $name = $description = $quantity = $price = "";
-        } else {
-            $name = $_POST["name"];
+        } else if ($_POST['form'] == ''){
+            
         }
     }
+
+function debug_to_console( $data ) {
+
+    if ( is_array( $data ) )
+        $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+    else
+        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+
+    echo $output;
+}
 ?>
 
 <html>
