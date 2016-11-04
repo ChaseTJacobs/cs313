@@ -32,7 +32,7 @@ require('dbconnectionta.php');
                 $name = $description = $quantity = $price = "";
         } else {
             if ( is_array( $_POST ) ){
-                $output = implode(',', $_POST);
+                $output = $_POST;
                 debug_to_console($output);
                 $name = $output[0];
                 $description = $output[1];
