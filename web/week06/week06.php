@@ -284,7 +284,7 @@ catch (PDOException $ex) {
                     ')"' . 
                     ' value="Save" />' . 
                     '</td>';
-                echo '</form></tr>';
+                echo '</tr></form>';
                 $rowID = $rowID + 1;
             }
         }
