@@ -104,9 +104,11 @@ require('dbconnectionta.php');
                         for(j=0;j<=childEl.length-1;j++){
                             if (j != childEl.length-1){
                                 childEl[j].firstElementChild.className="edit";
+                                childEl[j].childNodes[1].className="save";
                                 console.log(childEl[j].firstElementChild);
                             } else {
                                 childEl[j].childNodes[1].className="edit";
+                                childEl[j].firstElementChild.className="save";
                                 console.log(childEl[j].childNodes[1]);
                             }
                         }
