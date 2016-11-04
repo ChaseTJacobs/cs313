@@ -275,8 +275,7 @@ catch (PDOException $ex) {
                     $length . 
                     ')"' . 
                     ' value="Edit">';
-                echo '<input type="hidden" name="form" value="form2" />' .
-                    '<input type="submit"' . 
+                echo '<input type="submit"' . 
                     'class="save"' . 
                     ' onclick="editDatabase(' . 
                     $rowID . 
