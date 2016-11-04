@@ -35,23 +35,21 @@ require('dbconnectionta.php');
                 $output1 = $_POST;
                 debug_to_console($output1);
                 $name = $description = $quantity = $price = "t";
-                $name = $output1[0];
-                $description = $output1[1];
-                $quantity = $output1[2];
-                $price = $output1[3];
-                debug_to_console($name);
-                debug_to_console($description);
-                debug_to_console($quantity);
-                debug_to_console($price);
+                foreach ($output1 as $result){
+                    debug_to_console($result);
+                }
             }
         }
     }
 
 function debug_to_console( $data ) {
 
-   
+    if ( is_array( $data ) ){
+        $output = "<script>console.log( 'Debug Objects: Array: " . implode( ',', $data) . "' );</script>";
+    }
+    else {
         $output = "<script>console.log( 'Debug Objects: Data: " . $data . "' );</script>";
-    
+    }
     echo $output;
 }
 ?>
