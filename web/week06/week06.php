@@ -85,6 +85,10 @@ require('dbconnectionta.php');
                         childEl = rows[i].childNodes;
                         for(j=0;j<=childEl.length-1;j++){
                             if (j != childEl.length-1){
+                                if (j = 3){
+                                    childEl[j].childNodes[1].className="save";
+                                    childEl[j].childNodes[2].className="edit";
+                                }
                                 childEl[j].firstElementChild.className="save";
                                 childEl[j].childNodes[1].className="edit";
                                 console.log(childEl[j].firstElementChild);
@@ -109,7 +113,7 @@ require('dbconnectionta.php');
                         for(j=0;j<=childEl.length-1;j++){
                             if (j != childEl.length-1){
                                 if (j = 3){
-                                    childEl[j].firstElementChild.className="edit";
+                                    childEl[j].childNodes[1].className="edit";
                                     childEl[j].childNodes[2].className="save";
                                 }
                                 childEl[j].firstElementChild.className="edit";
