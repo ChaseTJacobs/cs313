@@ -87,7 +87,8 @@ require('dbconnectionta.php');
                             childEl[j].firstElementChild.className="save";
                             console.log(childEl[j].firstElementChild);
                         }
-                        childEl[length-1].firstElementChild.className="edit";
+                        console.log(childEl[length-1].childNodes[1]);
+                        childEl[length-1].childNodes[1].className="edit";
                     }
                 }
             }
@@ -208,7 +209,7 @@ catch (PDOException $ex) {
     foreach($result as $cat){
         $rowID = 1;
         echo '<tr>';
-        echo '<th colspan="4" ' . 'class="cat"' . ' onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</th>';
+        echo '<th colspan="5" ' . 'class="cat"' . ' onclick="toggleCat(' . $length . ')">' . $cat['name'] . '</th>';
         echo '</tr>';
         $query = $db->query("SELECT * FROM item")->fetchAll();
         foreach($query as $row){
