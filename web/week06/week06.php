@@ -252,7 +252,6 @@ catch (PDOException $ex) {
     } */
     $result = $db->query('SELECT * FROM category');
     $length = 1;
-    $tid = 1;
     foreach($result as $cat){
         $rowID = 1;
         echo '<tr>';
@@ -265,6 +264,7 @@ catch (PDOException $ex) {
                 $description = $row['description'];
                 $quantity = $row['quantity'];
                 $price = $row['price'];
+                $tid = $row['id'];
                 echo '<form action="" method="post" id="addForm2">';
                 echo '<tr class="row' . $length . '" name="' . $rowID . '">';
                 echo '<td>' . 
@@ -320,7 +320,6 @@ catch (PDOException $ex) {
                     '</td>';
                 echo '</tr>';
                 $rowID = $rowID + 1;
-                $tid = $tid + 1;
                 echo '</form>';
             }
         }
