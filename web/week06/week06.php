@@ -278,7 +278,7 @@ catch (PDOException $ex) {
                     '</span>' . 
                     '</td>';
                 echo '<td>' . 
-                    '<input type="submit"' . 
+                    '<input type="button"' . 
                     'class="edit"' . 
                     ' onclick="editCell(' . 
                     $rowID . 
