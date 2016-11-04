@@ -88,10 +88,11 @@ require('dbconnectionta.php');
                                 if (j == 3){
                                     childEl[j].childNodes[1].className="save";
                                     childEl[j].childNodes[2].className="edit";
+                                } else {
+                                    childEl[j].firstElementChild.className="save";
+                                    childEl[j].childNodes[1].className="edit";
+                                    console.log(childEl[j].firstElementChild);
                                 }
-                                childEl[j].firstElementChild.className="save";
-                                childEl[j].childNodes[1].className="edit";
-                                console.log(childEl[j].firstElementChild);
                             } else {
                                 childEl[j].childNodes[1].className="save";
                                 childEl[j].firstElementChild.className="edit";
@@ -115,11 +116,12 @@ require('dbconnectionta.php');
                                 if (j == 3){
                                     childEl[j].childNodes[1].className="edit";
                                     childEl[j].childNodes[2].className="save";
+                                } else {
+                                    childEl[j].firstElementChild.className="edit";
+                                    childEl[j].childNodes[1].className="save";
+                                    console.log(childEl[j].firstElementChild);
+                                    console.log(childEl.length-1);
                                 }
-                                childEl[j].firstElementChild.className="edit";
-                                childEl[j].childNodes[1].className="save";
-                                console.log(childEl[j].firstElementChild);
-                                console.log(childEl.length-1);
                             } else {
                                 childEl[j].childNodes[1].className="edit";
                                 childEl[j].firstElementChild.className="save";
