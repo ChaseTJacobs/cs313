@@ -51,8 +51,8 @@ require('dbconnectionta.php');
                     debug_to_console( $price );
                     $sqlString = "UPDATE item
                                SET name='" . $name . "', description='" . $description . "', quantity='" . $quantity . "', price='" . $price . "'
-                               WHERE id='" . $tid . "';"
-                    $db->exec()
+                               WHERE id='" . $tid . "';";
+                    $db->exec($sqlString);
                     
                 }
             }
