@@ -128,42 +128,6 @@ require('dbconnectionta.php');
 <body onload="hide()">
     
     <div class="table-title"><h3>Inventory</h3></div>
-
-<?php
-
-// default Heroku Postgres configuration URL
-$dbUrl = getenv('DATABASE_URL');
-
-if (empty($dbUrl)) {
- // example localhost configuration URL with postgres username and a database called cs313db
- $dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
-}
-
-$dbopts = parse_url($dbUrl);
-
-$dbHost = $dbopts["host"]; 
-$dbPort = $dbopts["port"]; 
-$dbUser = $dbopts["user"]; 
-$dbPassword = $dbopts["pass"];
-$dbName = ltrim($dbopts["path"],'/');
-
-    print "<table class='table-fill'>
-            <tr>
-                <th class='text-left'>Name</th>
-                <th class='text-left'>Description</th>
-                <th class='text-left'>Quantity</th>
-                <th class='text-left'>Price</th>
-                <th class='text-left'>Action</th>
-            </tr>";
-try {
- $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-}
-catch (PDOException $ex) {
- print "<p>error: $ex->getMessage() </p>\n\n";
- die();
-}
-
-?>
     
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="select-style">
@@ -209,6 +173,42 @@ catch (PDOException $ex) {
             </div>
     <input class="submit" type="submit" value="Search"/>
     </form>
+
+<?php
+
+// default Heroku Postgres configuration URL
+$dbUrl = getenv('DATABASE_URL');
+
+if (empty($dbUrl)) {
+ // example localhost configuration URL with postgres username and a database called cs313db
+ $dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
+}
+
+$dbopts = parse_url($dbUrl);
+
+$dbHost = $dbopts["host"]; 
+$dbPort = $dbopts["port"]; 
+$dbUser = $dbopts["user"]; 
+$dbPassword = $dbopts["pass"];
+$dbName = ltrim($dbopts["path"],'/');
+
+    print "<table class='table-fill'>
+            <tr>
+                <th class='text-left'>Name</th>
+                <th class='text-left'>Description</th>
+                <th class='text-left'>Quantity</th>
+                <th class='text-left'>Price</th>
+                <th class='text-left'>Action</th>
+            </tr>";
+try {
+ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+}
+catch (PDOException $ex) {
+ print "<p>error: $ex->getMessage() </p>\n\n";
+ die();
+}
+
+?>
     <?php
     /*
     function selectByCategory ($some_id){
