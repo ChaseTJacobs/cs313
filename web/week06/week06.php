@@ -32,16 +32,17 @@ require('dbconnectionta.php');
                 $name = $description = $quantity = $price = "";
         } else {
             if ( is_array( $_POST ) ){
-                $output = $_POST;
+                $output1 = $_POST;
                 debug_to_console($output);
-                $name = $output[0];
-                $description = $output[1];
-                $quantity = $output[2];
-                $price = $output[3];
-                debug_to_console( $name );
-                debug_to_console( $description );
-                debug_to_console( $quantity );
-                debug_to_console( $price );
+                $name = $description = $quantity = $price = "t";
+                $name = $output1[0];
+                $description = $output1[1];
+                $quantity = $output1[2];
+                $price = $output1[3];
+                debug_to_console($name);
+                debug_to_console($description);
+                debug_to_console($quantity);
+                debug_to_console($price);
             }
         }
     }
