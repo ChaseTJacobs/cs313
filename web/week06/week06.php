@@ -84,7 +84,7 @@ require('dbconnectionta.php');
                     if (rows[i].getAttribute("name")==length.toString()){
                         childEl = rows[i].childNodes;
                         for(j=0;j<=childEl.length-1;j++){
-                            if (j != childEl.length){
+                            if (j != childEl.length-1){
                                 childEl[j].firstElementChild.className="save";
                                 childEl[j].childNodes[1].className="edit";
                                 console.log(childEl[j].firstElementChild);
@@ -107,14 +107,16 @@ require('dbconnectionta.php');
                     if (rows[i].getAttribute("name")==length.toString()){
                         childEl = rows[i].childNodes;
                         for(j=0;j<=childEl.length-1;j++){
-                            if (j != childEl.length){
+                            if (j != childEl.length-1){
                                 childEl[j].firstElementChild.className="edit";
                                 childEl[j].childNodes[1].className="save";
                                 console.log(childEl[j].firstElementChild);
+                                console.log(childEl.length-1);
                             } else {
                                 childEl[j].childNodes[1].className="edit";
                                 childEl[j].firstElementChild.className="save";
                                 console.log(childEl[j].childNodes[1]);
+                                console.log(childEl.length-1);
                             }
                         }
                     }
