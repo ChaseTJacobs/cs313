@@ -44,10 +44,15 @@ require('dbconnectionta.php');
                     $description = $result[1];
                     $quantity = $result[2];
                     $price = $result[3];
+                    $tid = $result[4];
                     debug_to_console( $name );
                     debug_to_console( $description );
                     debug_to_console( $quantity );
                     debug_to_console( $price );
+                    $sqlString = "UPDATE item
+                               SET name='" . $name . "', description='" . $description . "', quantity='" . $quantity . "', price='" . $price . "'
+                               WHERE id='" . $tid . "';"
+                    $db->exec()
                     
                 }
             }
