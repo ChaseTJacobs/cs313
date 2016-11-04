@@ -28,8 +28,8 @@ require('dbconnectionta.php');
         
                 $sid = $db->lastInsertId('item_id_seq');
                 $name = $description = $quantity = $price = "";
-        } else if ($_POST['form'] == 'form2'){
-            
+        } else {
+            $name = $_POST["name"];
         }
     }
 ?>
@@ -285,8 +285,9 @@ catch (PDOException $ex) {
                     ')"' . 
                     ' value="Save" />' . 
                     '</td>';
-                echo '</tr></form>';
+                echo '</tr>';
                 $rowID = $rowID + 1;
+                echo '</form>';
             }
         }
         $length = $length + 1;
