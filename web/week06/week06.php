@@ -33,7 +33,7 @@ require('dbconnectionta.php');
         } else {
             if ( is_array( $_POST ) ){
                 $output1 = $_POST;
-                debut_to_console(count ($output1));
+                debug_to_console(count ($output1));
                 if (count($output1) == 5){
                     $count = 0;
                     foreach($output1 as $ele){
