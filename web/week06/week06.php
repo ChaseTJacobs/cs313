@@ -251,6 +251,7 @@ catch (PDOException $ex) {
     } */
     $result = $db->query('SELECT * FROM category');
     $length = 1;
+    $tid = 1;
     foreach($result as $cat){
         $rowID = 1;
         echo '<tr>';
@@ -318,6 +319,7 @@ catch (PDOException $ex) {
                     '</td>';
                 echo '</tr>';
                 $rowID = $rowID + 1;
+                $tid = $tid + 1;
                 echo '</form>';
             }
         }
