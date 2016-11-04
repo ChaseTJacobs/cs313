@@ -90,7 +90,7 @@ require('dbconnectionta.php');
                                     childEl[j].childNodes[1].className="edit";
                                 }
                             } else {
-                                childEl[j].childNodes[1].className="save";
+                                childEl[j].childNodes[2].className="save";
                                 childEl[j].firstElementChild.className="edit";
                             }
                         }
@@ -116,7 +116,7 @@ require('dbconnectionta.php');
                                     childEl[j].childNodes[1].className="save";
                                 }
                             } else {
-                                childEl[j].childNodes[1].className="edit";
+                                childEl[j].childNodes[2].className="edit";
                                 childEl[j].firstElementChild.className="save";
                             }
                         }
