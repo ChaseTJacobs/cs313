@@ -33,7 +33,7 @@ require('dbconnectionta.php');
         } else {
             if ( is_array( $_POST ) ){
                 $output1 = $_POST;
-                debug_to_console($output1);
+                debug_to_console(count($output1));
                 $name = $description = $quantity = $price = "t";
                 foreach ($output1 as $result){
                     debug_to_console($result);
