@@ -49,11 +49,12 @@ require('dbconnectionta.php');
 
 function debug_to_console( $data ) {
 
-    if ( is_array( $data ) )
+    if ( is_array( $data ) ){
         $output = "<script>console.log( 'Debug Objects: Array: " . implode( ',', $data) . "' );</script>";
-    else
+    }
+    else {
         $output = "<script>console.log( 'Debug Objects: Data: " . $data . "' );</script>";
-
+    }
     echo $output;
 }
 ?>
