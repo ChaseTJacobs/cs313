@@ -45,13 +45,11 @@ require('dbconnectionta.php');
                     $quantity = $result[2];
                     $price = $result[3];
                     $maybe = $result[4];
-                    $maybe2 = $result[5];
                     debug_to_console( $name );
                     debug_to_console( $description );
                     debug_to_console( $quantity );
                     debug_to_console( $price );
                     debug_to_console( $maybe );
-                    debug_to_console( $maybe2 );
                     
                 }
             }
