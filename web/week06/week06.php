@@ -107,6 +107,7 @@ require('dbconnectionta.php');
                                 console.log(childEl[j].firstElementChild);
                             } else {
                                 childEl[j].childNodes[1].className="save";
+                                console.log(childEl[j].childNodes[1]);
                             }
                         }
                     }
