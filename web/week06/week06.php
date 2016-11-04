@@ -32,9 +32,7 @@ require('dbconnectionta.php');
                 $name = $description = $quantity = $price = "";
         } else {
             if ( is_array( $_POST ) ){
-                debug_to_console($_POST)
                 $output1 = $_POST;
-                debut_to_console(count($output1));
                 if (count($output1) == 5){
                     $count = 0;
                     foreach($output1 as $ele){
@@ -45,12 +43,10 @@ require('dbconnectionta.php');
                     $description = $result[1];
                     $quantity = $result[2];
                     $price = $result[3];
-                    #$maybe = $result[4];
                     debug_to_console( $name );
                     debug_to_console( $description );
                     debug_to_console( $quantity );
                     debug_to_console( $price );
-                    #debug_to_console( $maybe );
                     
                 }
             }
@@ -255,7 +251,6 @@ catch (PDOException $ex) {
     } */
     $result = $db->query('SELECT * FROM category');
     $length = 1;
-    $tid = 1;
     foreach($result as $cat){
         $rowID = 1;
         echo '<tr>';
@@ -311,7 +306,7 @@ catch (PDOException $ex) {
                     $length . 
                     ')"' . 
                     ' value="Edit">';
-                echo '<input type="hidden" name="form2" value="'. $tid . '">';
+                echo '<input type="hidden" name="form2" value="'. $length . $rowID . '">';
                 echo '<input type="submit"' . 
                     'class="save"' . 
                     ' onclick="editDatabase(' . 
@@ -323,7 +318,6 @@ catch (PDOException $ex) {
                     '</td>';
                 echo '</tr>';
                 $rowID = $rowID + 1;
-                $tid = $tid + 1;
                 echo '</form>';
             }
         }
