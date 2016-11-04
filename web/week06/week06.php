@@ -235,7 +235,7 @@ catch (PDOException $ex) {
                 $price = $row['price'];
                 echo '<tr class="row' . $length . '" name="' . $rowID . '">';
                 echo '<td>' . 
-                    '<input type="text" class="save" value="' . 
+                    '<input type="text" class="save"' . 'name="name' . $length . $rowID . '"' . ' value="' . 
                     $name . 
                     '">' . 
                     '<span class="edit">' . 
@@ -243,7 +243,7 @@ catch (PDOException $ex) {
                     '</span>' . 
                     '</td>';
                 echo '<td>' . 
-                    '<input type="text" class="save" value="' . 
+                    '<input type="text" class="save"' . 'name="descpription' . $length . $rowID . '"' . ' value="' . 
                     $description . 
                     '">' . 
                     '<span class="edit">' . 
@@ -251,7 +251,7 @@ catch (PDOException $ex) {
                     '</span>' . 
                     '</td>';
                 echo '<td>' . 
-                    '<input type="text" class="save" value="' . 
+                    '<input type="text" class="save"' . 'name="quantity' . $length . $rowID . '"' . ' value="' . 
                     $quantity . 
                     '">' . 
                     '<span class="edit">' . 
@@ -259,7 +259,7 @@ catch (PDOException $ex) {
                     '</span>' . 
                     '</td>';
                 echo '<td>$' . 
-                    '<input type="text" class="save" value="' . 
+                    '<input type="text" class="save"' . 'name="price' . $length . $rowID . '"' . ' value="' . 
                     $price . 
                     '">' . 
                     '<span class="edit">' . 
