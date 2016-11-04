@@ -61,18 +61,13 @@ require('dbconnectionta.php');
             }
             
             function toggleCat(num){
-                console.log(num);
-                
                 var row = "row" + num.toString();
                 var all = document.getElementsByClassName(row);
-                console.log(row);
                 for (i=0;i<all.length;i++){
                     if (all[i].style.display == "none"){
                         all[i].style.display = "";
-                        console.log("Set to show");
                     } else {
                         all[i].style.display = "none";
-                        console.log("Set to hide");
                     }
                 }
             }
@@ -93,12 +88,10 @@ require('dbconnectionta.php');
                                 } else {
                                     childEl[j].firstElementChild.className="save";
                                     childEl[j].childNodes[1].className="edit";
-                                    console.log(childEl[j].firstElementChild);
                                 }
                             } else {
                                 childEl[j].childNodes[1].className="save";
                                 childEl[j].firstElementChild.className="edit";
-                                console.log(childEl[j].childNodes[1]);
                             }
                         }
                     }
@@ -121,14 +114,10 @@ require('dbconnectionta.php');
                                 } else {
                                     childEl[j].firstElementChild.className="edit";
                                     childEl[j].childNodes[1].className="save";
-                                    console.log(childEl[j].firstElementChild);
-                                    console.log(childEl.length-1);
                                 }
                             } else {
                                 childEl[j].childNodes[1].className="edit";
                                 childEl[j].firstElementChild.className="save";
-                                console.log(childEl[j].childNodes[1]);
-                                console.log(childEl.length-1);
                             }
                         }
                     }
@@ -286,7 +275,8 @@ catch (PDOException $ex) {
                     $length . 
                     ')"' . 
                     ' value="Edit">';
-                echo '<input type="submit"' . 
+                echo '<input type="hidden" name="form" value="form2" />' .
+                    '<input type="submit"' . 
                     'class="save"' . 
                     ' onclick="editDatabase(' . 
                     $rowID . 
