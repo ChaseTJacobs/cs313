@@ -209,7 +209,6 @@ catch (PDOException $ex) {
             </div>
     <input class="submit" type="submit" value="Search"/>
     </form>
-    <form action="" methond="post" id="addForm2">
     <?php
     /*
     function selectByCategory ($some_id){
@@ -233,6 +232,7 @@ catch (PDOException $ex) {
                 $description = $row['description'];
                 $quantity = $row['quantity'];
                 $price = $row['price'];
+                echo '<form action="" method="post" id="form' . $length . $rowID . '">'
                 echo '<tr class="row' . $length . '" name="' . $rowID . '">';
                 echo '<td>' . 
                     '<input type="text" class="save"' . 'name="name' . $length . $rowID . '"' . ' value="' . 
@@ -284,15 +284,13 @@ catch (PDOException $ex) {
                     ')"' . 
                     ' value="Save" />' . 
                     '</td>';
-                echo '</tr>';
+                echo '</form></tr>';
                 $rowID = $rowID + 1;
             }
         }
         $length = $length + 1;
     }
         ?>
-        <input type="hidden" name="form2" value="form2" />
-        </form>
     <?php
         echo '</table>';
     ?>
