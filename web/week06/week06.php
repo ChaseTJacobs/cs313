@@ -232,7 +232,7 @@ catch (PDOException $ex) {
                 $description = $row['description'];
                 $quantity = $row['quantity'];
                 $price = $row['price'];
-                echo '<form action="" method="post" id="form' . $length . $rowID . '">';
+                echo '<form action="" method="post" id="addForm2">';
                 echo '<tr class="row' . $length . '" name="' . $rowID . '">';
                 echo '<td>' . 
                     '<input type="text" class="save"' . 'name="name' . $length . $rowID . '"' . ' value="' . 
@@ -275,6 +275,7 @@ catch (PDOException $ex) {
                     $length . 
                     ')"' . 
                     ' value="Edit">';
+                echo '<input type="hidden" name="form2" value="'. $length . $rowID . '">';
                 echo '<input type="submit"' . 
                     'class="save"' . 
                     ' onclick="editDatabase(' . 
