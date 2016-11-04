@@ -1,6 +1,6 @@
 <?php
 require('dbconnectionta.php');
-    $name = $description = $quantity = $price = category_id = "";
+    $name = $description = $quantity = $price = "";
     
     if (isset($_POST) && !empty($_POST)){
         if($_POST['form'] == 'form1'){
@@ -11,17 +11,17 @@ require('dbconnectionta.php');
                 $category = $_POST["category"];
                 if ($category == "Furniture"){
                     $category = 1;
-                } else if (category == "Home Accessories"){
+                } else if ($category == "Home Accessories"){
                     $category = 2;
-                } else if (category == "Kitchen"){
+                } else if ($category == "Kitchen"){
                     $category = 3;
-                } else if (category == "Computer Accessories"){
+                } else if ($category == "Computer Accessories"){
                     $category = 4;
-                } else if (category == "Clothing Male"){
+                } else if ($category == "Clothing Male"){
                     $category = 5;
-                } else if (category == "Clothing Female"){
+                } else if ($category == "Clothing Female"){
                     $category = 6;
-                } else if (category == "Food"){
+                } else if ($category == "Food"){
                     $category = 7;
                 }
                 $db->exec("INSERT INTO item (name, description, quantity, price, category_id) VALUES ('$name', '$description', '$quantity', '$price', '$category')");
